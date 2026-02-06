@@ -1,4 +1,67 @@
 ---
-layout: home
-# Index page
+layout: page
+title: Welcome
+# Nascondiamo il titolo standard della pagina per fare noi la grafica
 ---
+
+<style>
+  /* CSS Inline veloce per creare due card cliccabili */
+  .split-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .choice-card {
+    flex: 1;
+    min-width: 280px;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none !important; /* Rimuove sottolineatura link */
+    color: white !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .choice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  }
+
+  /* Stile per la sezione TECH */
+  .tech-zone {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+  }
+
+  /* Stile per la sezione FUNNY */
+  .funny-zone {
+    background: linear-gradient(135deg, #e67e22, #f1c40f);
+  }
+
+  .card-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+  .card-title { font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem; display: block; }
+  .card-desc { font-size: 1rem; opacity: 0.9; display: block; font-weight: normal;}
+</style>
+
+<div class="split-container">
+
+  <a href="/categories/tech/" class="choice-card tech-zone">
+    <span class="card-icon">💻</span>
+    <span class="card-title">Tech Blog</span>
+    <span class="card-desc">Codice, Cloud, DevOps e cose serie.</span>
+  </a>
+
+  <a href="/categories/funny/" class="choice-card funny-zone">
+    <span class="card-icon">☕</span>
+    <span class="card-title">Funny & Rant</span>
+    <span class="card-desc">Vita da dev, bug assurdi e relax.</span>
+  </a>
+
+</div>
+
+<div style="margin-top: 3rem; text-align: center; opacity: 0.6;">
+  <p>Seleziona una pillola... ehm, una categoria.</p>
+</div>
