@@ -1,0 +1,54 @@
+---
+layout: page
+title: Tech Blog
+# Nascondiamo il titolo perché lo mettiamo noi nello stile
+icon: fas fa-code
+---
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
+
+  {% assign posts = site.categories.Tech %}
+
+  {% for post in posts %}
+  <article class="card-wrapper card">
+    <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+
+      <div class="col-12 col-md-9">
+        <div class="card-body">
+
+          <h1 class="card-title">
+            {{ post.title }}
+          </h1>
+
+          <div class="card-text content mt-0 mb-3">
+            <p>
+              {% if post.description %}
+              {{ post.description }}
+              {% else %}
+              {{ post.excerpt | strip_html | truncate: 200 }}
+              {% endif %}
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="me-auto">
+              <i class="far fa-calendar fa-fw"></i>
+              {% include datetime.html date=post.date lang=lang %}
+
+              <i class="far fa-folder-open fa-fw"></i>
+              <span>
+                  {% for category in post.categories %}
+                    {{ category }}
+                    {% unless forloop.last %},{% endunless %}
+                  {% endfor %}
+                </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </a>
+  </article>
+  {% endfor %}
+
+</div>
