@@ -1,0 +1,19 @@
+services:
+  site:
+    image: ruby:3.3
+    platform: linux/arm64
+    command: >
+      bash -c "gem install jekyll bundler &&
+      bundle install &&
+      bundle exec jekyll serve --host 0.0.0.0 --force_polling"
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/jekyll
+      - jekyll_gems:/usr/local/bundle
+    working_dir: /srv/jekyll
+    environment:
+      - JEKYLL_ENV=development
+
+volumes:
+  jekyll_gems:
