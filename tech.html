@@ -4,22 +4,9 @@ title: Tech Blog
 permalink: /tech/
 ---
 
-<style>
-  #core-wrapper {
-    /* Sovrascrive il col-xl-9 di default del tema */
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    padding-right: 0 !important;
-  }
-  #panel-wrapper {
-    /* Nasconde fisicamente la colonna destra del tema */
-    display: none !important;
-  }
-</style>
-
 <div class="row">
-  <div class="col-12">
 
+  <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4">
     <div id="post-list" class="flex-grow-1 px-xl-1">
 
       {% assign posts = site.categories.Tech %}
@@ -29,24 +16,22 @@ permalink: /tech/
         <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
 
           {% if post.image %}
-          <div class="col-md-4">
+          <div class="col-md-3">
             <img src="{{ post.image.path | relative_url }}" alt="{{ post.title }}" class="preview-img"
-                 style="width: 100%; height: 100%; object-fit: cover;">
+                 style="width:100%; height:100%; object-fit: cover;">
           </div>
           {% endif %}
 
-          <div class="col-12 {% if post.image %}col-md-8{% else %}col-md-12{% endif %}">
-            <div class="card-body">
+          <div class="col-12 {% if post.image %}col-md-9{% else %}col-md-12{% endif %}">
+            <div class="card-body" style="padding: 1rem 1.25rem;"> <h1 class="card-title" style="font-size: 1.4rem;"> {{ post.title }}
+            </h1>
 
-              <h1 class="card-title">{{ post.title }}</h1>
-
-              <div class="card-text content mt-0 mb-3">
+              <div class="card-text content mt-0 mb-2">
                 <p>
                   {% if post.description %}
                   {{ post.description }}
                   {% else %}
-                  {{ post.excerpt | strip_html | truncate: 250 }}
-                  {% endif %}
+                  {{ post.excerpt | strip_html | truncate: 160 }} {% endif %}
                 </p>
               </div>
 
@@ -55,7 +40,7 @@ permalink: /tech/
                   <i class="far fa-calendar fa-fw"></i>
                   {% include datetime.html date=post.date lang=lang %}
 
-                  <i class="far fa-folder-open fa-fw"></i>
+                  <i class="far fa-folder-open fa-fw ml-2"></i>
                   <span>
                       {% for category in post.categories %}
                         {{ category }}
@@ -73,4 +58,31 @@ permalink: /tech/
 
     </div>
   </div>
+
+  <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
+
+    <div class="access">
+      <div id="access-lastmod" class="post">
+        <div class="panel-heading">Recent Updates</div>
+        <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+          {% for post in site.posts limit:3 %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div id="access-tags">
+        <div class="panel-heading">Trending Tags</div>
+        <div class="d-flex flex-wrap mt-2">
+          {% for tag in site.tags limit:10 %}
+          <div class="px-2">
+            <a class="tag-item" href="{{ site.baseurl }}/tags/{{ tag[0] | slugify }}/">{{ tag[0] }}</a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
