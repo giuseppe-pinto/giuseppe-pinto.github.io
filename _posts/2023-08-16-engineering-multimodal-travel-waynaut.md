@@ -55,7 +55,7 @@ Simultaneously, our commercial department secured partnerships with major transp
 * **Volagratis**
 * **Traghetti Lines**
 
-My job was to integrate their APIs into our system. This was challenging because every provider used a different technology. Some offered modern, straightforward **REST APIs**, while others relied on older protocols like **SOAP**.
+My job was to integrate their APIs into our system. This was challenging because every provider used a different technology. Some offered straightforward **REST APIs**, while others relied on protocols like **SOAP**.
 We had to build an abstraction layer to normalize all this data into our internal domain model.
 
 ---
@@ -80,10 +80,10 @@ After researching various shortest-path algorithms, we settled on implementing t
 ## Infrastructure & Evolution
 
 Beyond the core algorithm, I had the opportunity to work with:
-* **MongoDB:** For handling unstructured data and logs.
+* **MongoDB:** For handling unstructured data.
 * **AWS (Amazon Web Services):** Where our entire infrastructure was deployed and scaled.
 
-After our first successful launch, Waynaut caught the attention of big players in the industry. Eventually, the company was **acquired by the lastminute.com group**, the company where I am currently working as a Senior Product Engineer.
+After our first successful launch, Waynaut caught the attention of big players in the industry. Eventually, the company was **acquired by the lastminute.com group**.
 
 This journey was truly remarkable. Building a novel, highly challenging system from scratch gave me the perfect foundation to specialize in the technological domain of travel.
 
