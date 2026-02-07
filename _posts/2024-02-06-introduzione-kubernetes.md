@@ -1,7 +1,7 @@
 ---
 title: Introduzione a Kubernetes
 date: 2024-02-06 12:00:00 +0100
-categories: [Tech]
+categories: [tech]
 tags: [container, orchestrazione, cloud]
 # Se vuoi mettere un'immagine grande in alto:
 # image:
