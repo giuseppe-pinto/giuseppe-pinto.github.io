@@ -74,7 +74,7 @@ I specialize in JVM languages and cloud-native technologies, focusing on buildin
 
 Feel free to reach out for collaborations or just to chat about tech, football, or comics!
 
-* **Curriculum Vitae:** [📄 Download my CV (PDF)](/assets/cv.pdf){: .btn .btn-outline-primary .btn-sm }
+* **Curriculum Vitae:** [📄 Download my CV (PDF)](/assets/giuseppe-pinto-cv.pdf){: .btn .btn-outline-primary .btn-sm }
 * **LinkedIn:** [giuseppe-pinto](https://www.linkedin.com/in/giuseppe-pinto)
 * **Instagram:** [peppe_blaze](https://www.instagram.com/peppe_blaze/)
 * **X:** [@giuse-pinto](https://x.com/giuse_pinto)
